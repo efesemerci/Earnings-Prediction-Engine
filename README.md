@@ -21,6 +21,16 @@ The notebooks use free or synthetic data where institutional feeds are unavailab
    - Uses a synthetic auction message simulator because real auction orderbook data is proprietary.
    - Trains quantile regression models and evaluates prediction interval coverage.
 
+4. **Credit Risk PD Model**
+   - Builds a probability of default model using the public German Credit dataset.
+   - Compares logistic regression and random forest models.
+   - Evaluates ROC-AUC, Brier score, confusion matrix, and PD calibration buckets.
+
+5. **Market Risk VaR and Expected Shortfall**
+   - Estimates portfolio Value-at-Risk and Expected Shortfall with historical simulation and parametric methods.
+   - Backtests VaR breaches against realized portfolio returns.
+   - Demonstrates basic market risk concepts relevant to risk modelling.
+
 ## Project Structure
 
 ```text
@@ -28,6 +38,8 @@ notebooks/
   01_earnings_prediction_v1.ipynb
   02_forecast_combination_v1.ipynb
   03_closing_auction_distribution_v1.ipynb
+  04_credit_risk_pd_model_v1.ipynb
+  05_market_risk_var_expected_shortfall_v1.ipynb
 data/
   raw/
   processed/
@@ -67,6 +79,8 @@ Free data has serious limitations:
 - The universe does not fully handle survivorship bias.
 - Options-implied volatility, short interest, and earnings premium features are excluded from V1.
 - Real closing auction orderbook feeds are proprietary, so Project 3 uses synthetic auction data.
+- The credit risk project uses a small public dataset and is not a regulatory PD model.
+- The market risk project is a simplified educational VaR/ES prototype and is not a production risk engine.
 
 Because of this, the right question is not "can this trade live capital?" The right question is "does this pipeline correctly test whether there is signal?"
 
